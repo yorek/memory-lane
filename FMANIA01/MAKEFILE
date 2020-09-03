@@ -1,0 +1,18 @@
+#Makefile
+
+CC = wcc386
+CCOPTS =  /w4 /oneatx /oh /ei /zp8 /6 /fp6
+PENTIUM_CCOPTS = /oneatx /oh /ei /zp8 /6 /fp6
+DIS_CCOPTS = /d1+ /oneatx /oh /ei /zp8 /5 /fp3
+
+all :           fm2.exe
+
+fm2.exe :      fm2.obj write.obj
+        wlink @rps.wlk 
+
+fm2.obj :       fm2.c
+        $(CC) fm2.c $(CCOPTS)
+
+write.obj :     write.c
+	$(CC) write.c $(CCOPTS)
+

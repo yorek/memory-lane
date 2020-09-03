@@ -1,0 +1,15 @@
+#Makefile
+
+CC = wcc386
+CCOPTS =  /oneatx /oh /ei /zp8 /5 /fp3
+PENTIUM_CCOPTS = /oneatx /oh /ei /zp8 /6 /fp6
+DIS_CCOPTS = /d3 /db /et /hw /oneatx /oh /ei /zp8 /5 /fp3
+
+all :           fw.exe
+
+fw.exe :      fw.obj 
+        wlink NAME fw SYSTEM pmodew FILe fw OPTION caseexact OPTION eliminate 
+
+fw.obj :   fw.c
+        $(CC) fw.c $(PENTIUM_CCOPTS)
+

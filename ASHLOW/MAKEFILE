@@ -1,0 +1,23 @@
+# Makefile for ASHES Demo
+
+MIDASDIR = c:\manowar\rps\midas111
+LIBDIR = $(MIDASDIR)\lib\dos\wcretail
+MIDASINCS = $(MIDASDIR)\src\midas
+MIDASLIB = $(LIBDIR)\midas.lib
+
+CC = wcc386
+CCOPTS = -wx -zdp -zu -i$(MIDASINCS) -fp3 -fpi87 -5
+
+all :           Ashes.exe 
+
+Ashes.exe :	gfx32.obj palette.obj demo.obj $(MIDASLIB)
+        wlink @rps.wlk library $(MIDASLIB)
+
+gfx32.obj : 	gfx32.c
+	$(CC) gfx32.c $(CCOPTS)
+
+palette.obj:	palette.c
+	$(CC) palette.c $(CCOPTS)
+	
+demo.obj : 	demo.c
+	$(CC) demo.c $(CCOPTS)

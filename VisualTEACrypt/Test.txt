@@ -1,0 +1,41 @@
+
+TEACrypt 80x86 Version v1.0.8 by Davide Mauri on Mar 24 2001 14:44:09
+
+The Tiny Encryption Algorithm (TEA) was developed by David Wheeler and
+Roger Needham at the Computer Laboratory of Cambridge University.
+The variant used was developed by David Wagner
+Thanks to Ross N. Williams for his tutorial on CRC32
+Thanks to Billy Bryan for his suggestion on optimization.
+
+
+	teacrypt {commands} {sourcefile} {destfile} [parameters]
+
+  Available commands:
+    c		Crypt {sourcefile} to {destfile}
+    d		Decrypt {sourcefile} to {destfile}
+
+  Available parameters:
+    -k{x}={y}	Keys. If {x} is a number from 1 to 4 you have to specify the
+    		4 {y} keys manually. Each keys has to be a 32bit integer value.
+    		If you use 'kf' you have to specify a file which will be used
+    		as key.
+    -v		Be verbose
+    -o		Use original de-encryption algorithm, which is a (very) little
+    		less secure
+    -n={x}	Number of de-encryption cycles.
+    		{x} can be any number from 0 up to 255 
+    		Default is {x}=16 which is a good compromise between security
+    		and speed.
+    		{x}=32 is for high security, x={0} is for no encryption  
+
+  Crypt Examples:
+    		teacrypt c readme.txt readme.tdf -k1=10 -k2=20 -k3=30 -k4=40  
+    		teacrypt c readme.txt readme.tdf -kf=key.jpg  
+
+  Decrypt Examples:
+    		teacrypt d readme.tdf readme_dec.txt -k1=10 -k2=20 -k3=30 -k4=40  
+    		teacrypt d readme.tdf readme_dec.txt -kf=key.jpg  
+
+More information on TEA can be found at:
+
+	http://vader.brad.ac.uk/tea/tea.shtml

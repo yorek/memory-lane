@@ -1,0 +1,16 @@
+Free Direction Starfield (c) 1998 Manowar/Rolling Pixels.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Hi dudes!
+Well, no much to say....the title is self-explanatory :)
+The added 2 .exe you'll find are for the ones that can't compile the source.
+
+ 	Fs.exe 	is the standard exe
+	bFs.exe is intended to be used for benchmarking.
+	sFs.exe will display the angulat coordinates ad velocity
+
+On my K6-233 it flies at 160 fps, using 2500 stars, and at 115 ca. using 4000 stars.
+
+See ya! 
+Manowar / Rolling Pixels
+

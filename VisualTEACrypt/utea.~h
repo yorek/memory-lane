@@ -1,0 +1,19 @@
+#ifndef TEA_H
+#define TEA_H
+
+#define DELTA       0x9E3779B9
+
+/* Global variables */
+unsigned long   cycles;
+
+/* TEA Prototypes */
+void	encipher		(const unsigned long *v, unsigned long *w, const unsigned long *k);
+void	decipher		(const unsigned long *v, unsigned long *w, const unsigned long *k);
+void	encipher_new	(const unsigned long *v, unsigned long *w, const unsigned long *k);
+void	decipher_new	(const unsigned long *v, unsigned long *w, const unsigned long *k);
+
+/* Function pointer */
+void	(*procfun)(const unsigned long *,unsigned long *, const unsigned long *);
+
+#endif
+ 
